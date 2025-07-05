@@ -6,22 +6,22 @@ public:
         int m= t.length();
         int n = s.length();
         int l=0,r=0,minlen= INT_MAX,cnt =0,sindex=-1;
-        unordered_map<char,int> mp;
+        unordered_map<char,int> mpp;
         for(int i=0;i<m;i++){
-            mp[t[i]]++;
+            mpp[t[i]]++;
         }
         while(r<n){
-            if(mp[s[r]] > 0){
+            if(mpp[s[r]] > 0){
                 cnt++;
             }
-            mp[s[r]]--;
+            mpp[s[r]]--;
             while(cnt == m){
                 if(r-l+1 < minlen){
                     minlen = r-l+1;
                     sindex = l;
                 }
-                mp[s[l]]++;
-                if(mp[s[l]]>0){
+                mpp[s[l]]++;
+                if(mpp[s[l]]>0){
                     cnt--;
                 }
                 l++;
