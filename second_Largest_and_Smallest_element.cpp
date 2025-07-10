@@ -15,21 +15,24 @@ int SL(vector<int> & nums){
     }
     return sec;
 }
-int SS(vector<int> & nums){
+int SS(vector<int>& nums) {
     int n = nums.size();
-    int sec = INT_MIN;
-    int smal = INT_MIN;
-    for(int i=0;i<n;i++){
-        if( nums[i] < smal){
+    if (n < 2) return -1;
+
+    int smal = INT_MAX, sec = INT_MAX;
+
+    for (int i = 0; i < n; i++) {
+        if (nums[i] < smal) {
             sec = smal;
             smal = nums[i];
-        }
-        if(nums[i] < sec && nums[i] != smal){
+        } else if (nums[i] > smal && nums[i] < sec) {
             sec = nums[i];
         }
     }
-    return sec;
+
+    return (sec == INT_MAX) ? -1 : sec;
 }
+
 int main(){
     int n;cin>>n;
     vector<int> arr(n);
