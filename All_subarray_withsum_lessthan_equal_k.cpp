@@ -4,18 +4,18 @@ using namespace std;
 
 vector<vector<int>> getAllSubarraysWithSumAtMostK(const vector<int>& arr, int k) {
     int n = arr.size();
-    vector<vector<int>> result;
+    vector<vector<int>> res;
 
     for (int i = 0; i < n; i++) {
         int sum = 0;
         for (int j = i; j < n; j++) {
             sum += arr[j];
             if (sum > k) break; 
-            result.push_back(vector<int>(arr.begin() + i, arr.begin() + j + 1));
+            res.push_back(vector<int>(arr.begin() + i, arr.begin() + j + 1));
         }
     }
 
-    return result;
+    return res;
 }
 
 void printSubarrays(const vector<vector<int>>& subarrays) {
