@@ -2,7 +2,7 @@
 using namespace std;
 class Solution {
 public:
-        vector<int> unionOfSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+    vector<int> unionOfSortedArrays(vector<int>& nums1, vector<int>& nums2) {
             set<int> resultSet;
             for (int num : nums1) {
                 resultSet.insert(num);
