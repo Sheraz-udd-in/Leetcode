@@ -20,6 +20,6 @@ public:
                 return it.first; // Return the number that appears only once
             }
         }
-        return -1; // Fallback in case no single number is found
+        return -1; 
     }
 };
