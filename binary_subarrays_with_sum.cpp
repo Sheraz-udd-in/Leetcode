@@ -3,9 +3,9 @@ using namespace std;
 class Solution {
 public:
     int numSubarraysWithSum(vector<int>& nums, int goal) {
-        return atMost(nums, goal) - atMost(nums, goal-1);
+        return atm(nums, goal) - atm(nums, goal-1);
     }
-    int atMost(vector<int>& nums, int goal){
+    int atm(vector<int>& nums, int goal){
         int n = nums.size();
         int l=0,r=0,sum=0,cnt=0;
         while(r<n){
