@@ -2,13 +2,13 @@
 using namespace std;
 class Solution {
 public:
-    int removeDuplicates(vector<int>& nums) {
-        int n = nums.size();
+    int removeDuplicates(vector<int>& arr) {
+        int n = arr.size();
         int i=0;
         for(int j=1;j<n;i++){
-            if(nums[j] != nums[i]){
+            if(arr[j] != arr[i]){
                 i++;
-                nums[i]= nums[j];
+                arr[i]= arr[j];
             }
         }
         return i+1;
